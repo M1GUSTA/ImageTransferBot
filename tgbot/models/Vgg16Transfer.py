@@ -95,7 +95,7 @@ def model_def():
 async def generate_styled_image(style_image_path = Path('tgbot', 'models', 'data', 'style1.png'),
                           content_image_path = Path( 'tgbot', 'models', 'data', 'content1.png')):
     # Загрузка изображений
-    SIZE_IMAGE = 512  # Замените на ваш размер изображения
+    SIZE_IMAGE = 512  
 
     to_mean_tensor = transforms.Compose([
         transforms.Resize(SIZE_IMAGE),
@@ -191,7 +191,6 @@ def generate_styled_image_in_thread(opt_img, style_transfer_model, loss_layers, 
         loss = opt.step(step_opt)
 
     return opt_img.data.clone()
-# # Пример использования функции
 
 style_image_path = Path( 'data', 'style1.png')
 content_image_path = Path( 'data', 'content1.png')
